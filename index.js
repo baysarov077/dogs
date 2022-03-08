@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ТВОЙ КОД
   async function fetchAndRenderImages() {
+    imagesContainer.innerHTML =' '
     let res = await fetch(IMAGES_URL)
     let data = await res.json()
     console.log(data)
