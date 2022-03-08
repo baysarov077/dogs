@@ -29,5 +29,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ТВОЙ КОД
+  async function fetchAndRenderImages() {
+    let res = await fetch(IMAGES_URL)
+    let data = await res.json()
+    console.log(data)
+    for(let i = 0; i < data.message.length; i++){
+      let img = document.createElement('img')
+      img.className = 'listImg'
+      imagesContainer.append(img)
+      img.src = data.message[i]
+    }
+  }
+  async function fetchBreedsList() {
+    let res = await fetch(BREEDS_URL)
+    let data = await res.json()
+    for(let i = 0; i < data.message.length; i++) {
+      let listItem = document.createElement('li')
+      breedsContainer.append(listItem)
+      listItem.textContent = data.message[i]
+    }
+    
+  }
+  
 
 });

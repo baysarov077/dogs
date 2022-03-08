@@ -51,3 +51,7 @@ button {
 .images__item img {
   width: 100%;
 }
+
+.listImg {
+  width: 550px;
+}
